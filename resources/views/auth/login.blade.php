@@ -26,7 +26,7 @@
  
         <p class="or-social">Or Use Social Login</p>
  
-        <a href="#" class="btn btn-lg btn-primary btn-block facebook" type="submit">Facebook</a>
+        <a href="{{ route('social.redirect', 'facebook') }}" class="btn btn-lg btn-primary btn-block facebook" type="submit">Facebook</a>
         <a href="#" class="btn btn-lg btn-primary btn-block twitter" type="submit">Twitter</a>
  
     {!! Form::close() !!}

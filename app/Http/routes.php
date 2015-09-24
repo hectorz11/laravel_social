@@ -50,3 +50,8 @@ Route::group(['middleware' => 'auth:all'], function()
     Route::get('/logout', ['as' => $a . 'logout', 'uses' => 'Auth\AuthController@getLogout']);
 });
 
+$s = 'social.';
+Route::get('/social/redirect/{provider}', [
+	'as' => $s . 'redirect', 'uses' => 'Auth\AuthController@getSocialRedirect']);
+Route::get('/social/handle/{provider}', [
+	'as' => $s . 'handle', 'uses' => 'Auth\AuthController@getSocialHandle']);
