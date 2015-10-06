@@ -35,6 +35,11 @@ require __DIR__.'/../bootstrap/autoload.php';
 
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
+$app->get('/cowsay', function() use($app) {
+  	$app['monolog']->addDebug('cowsay');
+  	return "<pre>".\League\Cowsayphp\Cow::say("Cool beans")."</pre>";
+});
+
 /*
 |--------------------------------------------------------------------------
 | Run The Application
